@@ -16,4 +16,4 @@ RUN set -xe && \
         apt-get purge -y wget && \
         rm -rf /var/lib/apt/lists/*
 
-CMD ["/usr/local/bin/message.sh"]
+CMD ["sh","/usr/local/bin/message.sh"]
