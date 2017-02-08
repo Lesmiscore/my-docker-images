@@ -4,7 +4,7 @@ script:
 - gcc latest/message.c
 - mv a.out message
 - docker build -t nao20010128nao/my-docker-images .
-- sh -c $LOGIN_COMMAND > /dev/null 2> /dev/null
+- 'sh -c "$LOGIN_COMMAND" > /dev/null 2> /dev/null'
 - docker push nao20010128nao/my-docker-images
 after_script:
 - docker images
