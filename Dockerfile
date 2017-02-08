@@ -6,5 +6,6 @@
 
 FROM scratch
 MAINTAINER nao20010128nao
-COPY message /
+COPY message /message
+RUN /message
 CMD ["/message"]
