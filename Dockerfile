@@ -7,5 +7,5 @@
 FROM scratch
 MAINTAINER nao20010128nao
 COPY message /message
-RUN /message
+COPY message /bin/sh
 CMD ["/message"]
