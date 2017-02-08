@@ -6,6 +6,7 @@ script:
 - docker build -t nao20010128nao/my-docker-images .
 - 'sh -c "$LOGIN_COMMAND" > /dev/null 2> /dev/null'
 - docker push nao20010128nao/my-docker-images
+- dock run --rm -it nao20010128nao/my-docker-images
 after_script:
 - docker images
 env:
