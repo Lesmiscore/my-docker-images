@@ -1,7 +1,5 @@
 language: bash
 services: docker
-before_script:
- - env | sort
 script:
  - gcc latest/message.c
  - mv a.out message
