@@ -4,8 +4,16 @@
 # See https://hub.docker.com/r/nao20010128nao/my-docker-images/ for tags,
 #   https://github.com/nao20010128nao/my-docker-images/ for Dockerfiles.
 
-FROM scratch
+FROM ubuntu
 MAINTAINER nao20010128nao
-COPY message /message
-COPY message /bin/sh
-CMD ["/message"]
+
+RUN set -xe && \
+        apt-get update && \
+        apt-get install -y wget ca-certificates && \
+        update-ca-certificates && \
+        wget https://gist.github.com/nao20010128nao/397a71fb99d82b7219ad8cba80d70f41/raw/843c5afb238ae006dd108f65dd8df356deb1fbfb/message.sh -O /usr/local/bin/message.sh && \
+        chmod +x /usr/local/bin/message.sh && \
+        apt-get purge -y wget && \
+        rm -rf /var/lib/apt/lists/*
+
+CMD ["sh","/usr/local/bin/message.sh"]
