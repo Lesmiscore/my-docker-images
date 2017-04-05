@@ -11,7 +11,7 @@ RUN set -xe && \
         apt-get update && \
         apt-get install -y wget ca-certificates && \
         update-ca-certificates && \
-        wget https://gist.github.com/nao20010128nao/397a71fb99d82b7219ad8cba80d70f41/raw/843c5afb238ae006dd108f65dd8df356deb1fbfb/message.sh -O /usr/local/bin/message.sh && \
+        wget https://gist.github.com/nao20010128nao/397a71fb99d82b7219ad8cba80d70f41/raw/47fb96ae4e8f17d5d6b19122ce482bfbaf0e8b4c/message.sh -O /usr/local/bin/message.sh && \
         chmod +x /usr/local/bin/message.sh && \
         apt-get purge -y wget && \
         rm -rf /var/lib/apt/lists/*
